@@ -1,0 +1,53 @@
+@use '../abstracts' as *;
+
+.estate-grid {
+  overflow-x: hidden;
+  @include grid(
+    $template-cols: [full-start space-start] minmax(10rem, 1fr) [space-end
+      main-start] repeat(12, 1fr) [main-end space-start] minmax(10rem, 1fr)
+      [space-end full-end],
+    $template-rows: var(--header-height) calc(100vh - var(--header-height))
+  );
+
+  @include respond-to("large") {
+    @include grid(
+      $template-cols: [full-start space-start] 5rem [space-end main-start]
+        repeat(12, 1fr) [main-end space-start] minmax(10rem, 1fr) [space-end
+        full-end],
+      $template-rows: var(--header-height) calc(100vh - var(--header-height))
+    );
+  }
+
+  header {
+    grid-row: 1 / 2;
+    z-index: 5;
+  }
+
+  header {
+    grid-column: main-start / main-end;
+
+    @include respond-to("medium") {
+      grid-column: full-start / full-end;
+      margin-left: 8rem;
+    }
+
+    @include respond-to("small") {
+      grid-column: full-start / full-end;
+      margin-left: 2rem;
+    }
+  }
+
+  section.intro {
+    grid-column: main-start / full-end;
+    grid-row: 1 / 3;
+
+    @include respond-to("medium") {
+      grid-column: full-start / full-end;
+    }
+  }
+
+  section.deals {
+    grid-column: main-start / main-end;
+    grid-row: 3 / -1;
+  }
+}

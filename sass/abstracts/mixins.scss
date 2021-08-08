@@ -1,0 +1,29 @@
+@use './variables.scss' as *;
+
+@mixin centerAbsolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin grid(
+  $template-cols: auto,
+  $template-rows: auto,
+  $col-gap: 0px,
+  $row-gap: 0px
+) {
+  display: grid;
+  grid-template-columns: $template-cols;
+  grid-template-rows: $template-rows;
+  grid-column-gap: $col-gap;
+  grid-row-gap: $row-gap;
+}
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media only screen and (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}

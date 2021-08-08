@@ -1,0 +1,33 @@
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  padding: 2rem 0;
+  font-weight: 600;
+  font-size: 1.6rem;
+  display: inline-block;
+  background-color: transparent;
+}
+
+.input {
+  display: block;
+  border: 0;
+  box-shadow: 0 10px 15px rgb(0 0 0 / 10%);
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding-left: 2rem;
+  color: var(--c-dark1);
+
+  &::placeholder {
+    color: currentColor;
+  }
+}
+
+a {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}

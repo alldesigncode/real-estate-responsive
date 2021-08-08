@@ -1,0 +1,20 @@
+:root {
+  --c-white: #fff;
+  --c-light: #f3f3f6;
+  --c-blue: #054cb7;
+  --c-grey1: #f3f3f6;
+  --c-grey2: #aaafbb;
+  --c-dark: #090709;
+  --c-dark1: #413e4c;
+  --header-height: 9.6rem;
+  --space-md: 3rem;
+  --space-lg: 6rem;
+  --space-xl: 9rem;
+  --ease: 150ms ease;
+}
+
+$breakpoints: (
+  "small": 47.9375em, // 767px
+  "medium": 62em, // 992px
+  "large": 85.375em, // 1366px
+) !default;
